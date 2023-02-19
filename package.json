@@ -1,0 +1,26 @@
+{
+  "name": "nodejs-homework-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "start:dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nickgric/nodejs-homework-1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nickgric/nodejs-homework-1/issues"
+  },
+  "homepage": "https://github.com/nickgric/nodejs-homework-1#readme",
+  "dependencies": {
+    "nanoid": "^4.0.1",
+    "ts-node": "^10.9.1",
+    "uuid": "^9.0.0"
+  }
+}
