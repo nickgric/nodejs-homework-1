@@ -15,8 +15,13 @@ class ContactsOperations {
   }
 
   async displayContacts() {
+    const table = [];
+    const contacts = await this.readContacts();
+    JSON.parse(contacts).map(({ name, email, phone }) => {
+      table.push({ name, email, phone });
+    });
     console.log("All contacts from database:");
-    console.log(await this.readContacts());
+    console.table(table);
   }
 
   async displayContactById(contactId) {
