@@ -21,6 +21,7 @@
   "dependencies": {
     "nanoid": "^4.0.1",
     "ts-node": "^10.9.1",
-    "uuid": "^9.0.0"
+    "uuid": "^9.0.0",
+    "yargs": "^17.7.0"
   }
 }

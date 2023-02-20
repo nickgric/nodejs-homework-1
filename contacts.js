@@ -15,6 +15,7 @@ class ContactsOperations {
   }
 
   async displayContacts() {
+    console.log("All contacts from database:");
     console.log(await this.readContacts());
   }
 
@@ -27,7 +28,16 @@ class ContactsOperations {
       console.log("Can't find any contact by id...");
       return;
     }
+    console.log("Contact from database with your id:");
     console.log(contactById);
+  }
+
+  async addContact(name, email, phone) {
+    const contactsList = JSON.parse(await this.readContacts());
+    const newContact = { id: uuidv4(), name, email, phone };
+    contactsList.push(newContact);
+    fs.writeFile(this.contactsPath, JSON.stringify(contactsList, null, 2));
+    console.log("Contact was successfully added to database!");
   }
 
   async removeContact(contactId) {
@@ -42,13 +52,7 @@ class ContactsOperations {
     }
     contactsList.splice(contactIndex, 1);
     fs.writeFile(this.contactsPath, JSON.stringify(contactsList, null, 2));
-  }
-
-  async addContact(name, email, phone) {
-    const contactsList = JSON.parse(await this.readContacts());
-    const newContact = { id: uuidv4(), name, email, phone };
-    contactsList.push(newContact);
-    fs.writeFile(this.contactsPath, JSON.stringify(contactsList, null, 2));
+    console.log("Contact was successfully removed from database!");
   }
 }
 
